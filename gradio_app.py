@@ -20,21 +20,31 @@ system_prompt="""You have to act as a professional doctor, i know you are not bu
             Dont respond as an AI model in markdown, your answer should mimic that of an actual doctor not an AI bot, 
             Keep your answer concise (max 2 sentences). No preamble, start your answer right away please"""
 
-
 def process_inputs(audio_filepath, image_filepath):
-    speech_to_text_output = transcribe_with_groq(GROQ_API_KEY=os.environ.get("GROQ_API_KEY"), 
-                                                 audio_filepath=audio_filepath,
-                                                 stt_model="whisper-large-v3")
+    if not audio_filepath or not os.path.exists(audio_filepath):
+        return "No audio received or file missing.", "", None
 
-    # Handle the image input
+    speech_to_text_output = transcribe_with_groq(
+        GROQ_API_KEY=os.environ.get("GROQ_API_KEY"), 
+        audio_filepath=audio_filepath,
+        stt_model="whisper-large-v3"
+    )
+
     if image_filepath:
-        doctor_response = analyze_image_with_query(query=system_prompt+speech_to_text_output, encoded_image=encode_image(image_filepath), model="meta-llama/llama-4-scout-17b-16e-instruct")
+        doctor_response = analyze_image_with_query(
+            query=system_prompt + speech_to_text_output,
+            encoded_image=encode_image(image_filepath),
+            model="meta-llama/llama-4-scout-17b-16e-instruct"
+        )
     else:
         doctor_response = "No image provided for me to analyze"
 
-    voice_of_doctor = text_to_speech_with_elevenlabs(input_text=doctor_response, output_filepath="final.mp3") 
+    voice_of_doctor = text_to_speech_with_elevenlabs(
+        input_text=doctor_response,
+        output_filepath="final.mp3"
+    )
 
-    return speech_to_text_output, doctor_response, voice_of_doctor
+    return speech_to_text_output, doctor_response, "final.mp3"
 
 
 # Create the interface
