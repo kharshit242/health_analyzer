@@ -21,7 +21,7 @@ def encode_image(image_path):
 from groq import Groq
 
 query="Is there something wrong with my face?"
-model = "meta-llama/llama-4-scout-17b-16e-instruct"
+model = "playai-tts"
 #model="llama-3.2-90b-vision-preview" #Deprecated
 
 def analyze_image_with_query(query, model, encoded_image):
