@@ -1,10 +1,11 @@
 # if you dont use pipenv uncomment the following:
-# from dotenv import load_dotenv
-# load_dotenv()
+import os
+from dotenv import load_dotenv
+
 
 #Step1: Setup GROQ API key
-import os
 
+load_dotenv()
 GROQ_API_KEY=os.environ.get("GROQ_API_KEY")
 
 #Step2: Convert image to required format

@@ -1,6 +1,6 @@
 # if you dont use pipenv uncomment the following:
-# from dotenv import load_dotenv
-# load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 
 #Step1a: Setup Text to Speech–TTS–model with gTTS
 import os
@@ -24,8 +24,8 @@ text_to_speech_with_gtts_old(input_text=input_text, output_filepath="gtts_testin
 import elevenlabs
 from elevenlabs.client import ElevenLabs
 
-API_KEYELEVENLABS_=os.environ.get("ELEVENLABS_API_KEY")
 
+ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY")
 def text_to_speech_with_elevenlabs_old(input_text, output_filepath):
     client=ElevenLabs(api_key=ELEVENLABS_API_KEY)
     audio=client.generate(
