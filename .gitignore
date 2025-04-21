@@ -1,0 +1,56 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pipenv
+Pipfile.lock
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+.python-version
+
+# VS Code settings
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Log files
+*.log
+
+# Python distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Pytest cache
+.pytest_cache/
+
+# Gradio cache (if used)
+gradio_cached_examples/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+.env.*
+
+# Render deploy build artifacts (if any)
+*.render-build/
