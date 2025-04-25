@@ -11,7 +11,7 @@ fastapi==0.115.6; python_version >= '3.8'
 ffmpy==0.5.0; python_version >= '3.8' and python_version < '4.0'
 filelock==3.16.1; python_version >= '3.8'
 fsspec==2024.12.0; python_version >= '3.8'
-gradio==5.12.0; python_version >= '3.10'
+gradio==5.12.0
 gradio-client==1.5.4; python_version >= '3.10'
 groq==0.15.0; python_version >= '3.8'
 h11==0.14.0; python_version >= '3.7'
@@ -20,14 +20,14 @@ httpx==0.28.1; python_version >= '3.8'
 huggingface-hub==0.27.1; python_full_version >= '3.8.0'
 idna==3.10; python_version >= '3.6'
 jinja2==3.1.5; python_version >= '3.7'
-langchain==0.2.0                              
+langchain==0.2.0                            
 langchain-community==0.2.0                     
 langchain-core==0.2.0                          
 langchain-cli==0.0.24                          
 markdown-it-py==3.0.0; python_version >= '3.8'
 markupsafe==2.1.5; python_version >= '3.7'
 mdurl==0.1.2; python_version >= '3.7'
-numpy==2.2.1; python_version >= '3.10'
+numpy==1.26.4
 orjson==3.10.14; python_version >= '3.8'
 packaging==24.2; python_version >= '3.8'
 pandas==2.2.3; python_version >= '3.9'
